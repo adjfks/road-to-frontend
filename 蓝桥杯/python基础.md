@@ -1,3 +1,27 @@
+# 蓝桥杯基本信息
+
+## 1. 环境
+
+版本：python 3.8.6
+
+操作系统win7及以上
+
+
+
+## 2. 库
+
+只能使用标准库： [python 3标准库](https://docs.python.org/zh-cn/3.8/library/index.html)
+
+
+
+## 3、IDLE基本操作
+
+1. 按**tab**自动补齐代码
+2. 按下**F5**运行代码
+3. **alt+3**注释代码，**alt+4**取消注释
+
+<br/>
+
 # 一、基础
 
 ## 1. 字符串
@@ -688,4 +712,24 @@ if __name__=='__main__':
         insert(x,root)
         show(root)        
 ```
+
+# 二、python库
+
+## 1、 math库
+
+### (1) 圆周率 math.pi
+
+
+
+## (2)math.sqrt(x)求平方根
+
+```python
+import math
+>>> math.sqrt(100)
+10.0
+```
+
+**注意点:** 使用此函数返回的永远都是一个 float 类型数据。
+
+可以用于求素数和一个数的所有因数
 
