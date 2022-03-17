@@ -1,4 +1,8 @@
 
-# Haikus for Codespaces
+# Road To Frontend
 
-This is a quick node project template for demoing Codespaces. It is based off of the [Azure node sample](https://github.com/Azure-Samples/nodejs-docs-hello-world). It's great!!!
+靡不有初，鲜克有终。
+
+不积跬步，无以至千里。
+
+个人笔记仓库，每天积累一点点。
