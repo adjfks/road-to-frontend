@@ -24,7 +24,7 @@
 
 # 一、基础
 
-## 1. 字符串
+### 1. 字符串
 
 #### （1） split()
 
@@ -585,6 +585,16 @@ print(x.r, x.i)   # 输出结果：3.0 -4.5
 #取二进制数num的第i位 函数
 def getBit(num , i):
 	return num >> (i-1) & 1
+```
+
+
+
+
+
+### 28. count()统计列表中某个元素个数
+
+```python
+list.count(item)
 ```
 
 
