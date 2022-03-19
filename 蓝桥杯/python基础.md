@@ -599,6 +599,17 @@ list.count(item)
 
 
 
+
+
+### 29. python正常退出程序
+
+```
+import sys
+sys.exit(0)
+```
+
+
+
 ## 二、输入输出模板
 
 ```python
