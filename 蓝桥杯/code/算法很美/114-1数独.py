@@ -56,37 +56,61 @@
  """
 import sys
 
-def check(x , y , i):
+def check(table,x , y , i):
   #检查行和列
-  for j in range(8):
+  for j in range(9):
     if table[x][j] == i or table[j][y] == i:
       return False
   #检查九宫格
-  
+  for m in range( (x//3)*3 , (x//3)*3 + 3):
+    for n in range( (y//3) * 3 , (y//3) * 3 + 3):
+      if table[m][n] == i:
+        return False
+  return True
 
 def dfs(table, x, y):
   #结束条件
   if x == 9:
-    print(table)
+    printTable(table)
     sys.exit(0)
 
   # 该位置没有填过
-  if table[x][y] == '0':
+  if table[x][y] == 0:
     # 遍历数字1到9
     for i in range(1, 10):
       # 检查该数字是否合法，返回布尔值
-      isLegal = check(x, y, i)
+      isLegal = check(table, x, y, i)
       # 若合法
       if isLegal:
         # 填入该数字i
-        table[x][y] = str(i)
+        table[x][y] = i
         # 状态转移，搜索下一位置
         dfs(table, x+y//8, (y+1) % 9)
     #回溯
-    table[x][y] = '0'
+    table[x][y] = 0
   #该位置已经填过数字了
   else:
     #搜索下一位置
     dfs(table, x+y//8, (y+1) % 9)
+
+def printTable(table):
+  for i in range(len(table)):
+    for num in table[i]:
+      print(num , end="")
+    print('\n')
+    
+
+      
+
+def main():
+  table = []
+  for i in range(9):
+    table.append([int(i) for i in input()])
+  dfs(table,0,0)
+  
+
+main()
+    
+
 
       
