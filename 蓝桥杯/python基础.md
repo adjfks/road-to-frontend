@@ -610,6 +610,95 @@ sys.exit(0)
 
 
 
+
+
+### 30. 自定义排序函数
+
+第一种方式：
+
+自定义排序规则，需要导入functools标准库，在sort或sorted方法种传入key参数，排序规则函数返回正值则交换（升序）
+
+- cmp函数的返回值 必须为 [1,-1,0]
+
+```python
+import  functools
+a = [3,8,14,6,7]
+def compare_personal(x,y):
+    return x%7-y%7
+a.sort(key=functools.cmp_to_key(compare_personal))
+b = sorted(a,key=functools.cmp_to_key(compare_personal))
+print(a)
+print(b)
+>>>[14, 7, 8, 3, 6]
+>>>[14, 7, 8, 3, 6]
+
+```
+
+第二种方式：按照某一种元素排序
+
+使用lambda表达式
+
+```python
+students = [("zhangsan","A",10),("lisi","C",9),("lisi1","A",9),("lisi2","B",9),("wangwu","B",13)]
+
+students.sort(key=lambda x:(x[2],x[1]))
+print(students)
+>>[('lisi1', 'A', 9), ('lisi2', 'B', 9), ('lisi', 'C', 9), ('zhangsan', 'A', 10), ('wangwu', 'B', 13)]
+#根据那一个元素进行排序，上面的代码中返回了两个元素，也就是数据中x[2]相同的数据会根据x[1]再排个序
+```
+
+对象
+
+```python
+class student:
+    def __init__(self,name,age,weight):
+        self.name = name
+        self.age = age
+        self.weight = weight
+
+std1 = student("std1",10,55)
+std2 = student("std2",8,30)
+std3 = student("std3",11,65)
+std4 = student("std4",9,50)
+
+students = [std1,std2,std3,std4]
+students.sort(key= lambda x:x.age)
+for std in students:
+    print(std.name)
+>>>
+std2
+std4
+std1
+std3
+
+```
+
+
+
+
+
+### 31. python变量作用域
+
+- L: Local 局部作用域
+- E: Enclosing 闭包函数外的函数中
+- G : Global 全局作用域
+- B: Built-in 内建作用域
+
+**在函数内部给一个变量赋值时，python会将它强行设置为局部变量**
+
+```python
+def foo():
+	global s	#s
+	s = 0
+	for i in range(10):
+		s = s + 60
+		
+foo()
+print(s)
+```
+
+
+
 ## 二、输入输出模板
 
 ```python
@@ -733,6 +822,14 @@ if __name__=='__main__':
         insert(x,root)
         show(root)        
 ```
+
+
+
+
+
+### 
+
+
 
 # 二、python库
 
