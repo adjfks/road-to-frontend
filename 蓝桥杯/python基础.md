@@ -310,6 +310,15 @@ aList = [123, 'xyz', 'zara', 'abc', 'xyz']
 print(aList.remove('xyz'))
 ```
 
+列表sort降序排列
+
+```python
+>>> a = [1,3,4]
+>>> a.sort(reverse=True)
+>>> a
+[4, 3, 1]
+```
+
 
 
 ### 11.bool()函数
@@ -414,7 +423,19 @@ print("{:.2f}".format(3.1415926)) #3.14
 
 ```
 
+时间格式化
 
+```python
+""" 
+http://lx.lanqiao.cn/problem.page?gpid=T2909
+"""
+
+n = int(input())
+h = n // 1000 // 60 // 60 % 24
+m = n // 1000 // 60 % 60
+s = n // 1000 % 60
+print("{:0>2d}:{:0>2d}:{:0>2d}".format(h,m,s))
+```
 
 
 
