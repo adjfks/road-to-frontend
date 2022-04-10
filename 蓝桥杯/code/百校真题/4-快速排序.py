@@ -11,6 +11,7 @@ arr.pop()
 def swap(arr, i, j):
     arr[i], arr[j] = arr[j], arr[i]
 
+
 # 快排
 
 
@@ -34,18 +35,15 @@ quickSort(arr, 0, len(arr) - 1)
 for num in arr:
     print(num, end=" ")
 
-
 # arr = [i for i in map(int, input().split())]
 # # 处理 0 值，不参与排序
 # if 0 in arr:
 #     arr.remove(0)
 
-
 # def swap(arr, i, j):
 #     """位置互换"""
 #     arr[i], arr[j] = arr[j], arr[i]
 #     return arr
-
 
 # def QuickSort(arr, start, end):
 #     if start < end:
@@ -62,7 +60,6 @@ for num in arr:
 #         QuickSort(arr, start, i - 1)
 #         QuickSort(arr, j + 1, end)
 #         return arr
-
 
 # res = QuickSort(arr, 0, len(arr) - 1)
 # for x in res:
